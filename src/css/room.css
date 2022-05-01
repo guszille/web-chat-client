@@ -1,0 +1,119 @@
+.room {
+    background-color: #AEAEAE;
+
+    padding: 16px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 80px;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+}
+
+.room-connected-users {
+    background-color: #EAEAEA;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    padding: 16px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    display: grid;
+    grid-row-gap: 8px;
+    grid-auto-rows: 48px;
+
+    overflow: auto;
+    height: calc(100vh - 100px);
+}
+
+.room-connected-users div {
+    background-color: #FFFFFF;
+
+    padding: 8px 32px;
+
+    border: 1px solid transparent;
+    border-radius: 16px;
+}
+
+.room-connected-users span {
+    background-color: #CCCCCC;
+
+    padding: 5px;
+
+    border: 1px solid transparent;
+    border-radius: 64px;
+
+    /* WARN: sledgehammer in the code. */
+    width: 20px;
+    text-align: center;
+    margin-right: 24px;
+    display: inline-block;
+}
+
+.room-connected-users p {
+    margin: 0;
+
+    display: inline-block;
+}
+
+.room-message-list {
+    background-color: #EAEAEA;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    padding: 16px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.room-message-input {
+    background-color: #EAEAEA;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    padding: 16px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    display: flex;
+}
+
+.room-message-input textarea {
+    flex: 1;
+    padding: 8px;
+    margin-right: 8px;
+}
+
+.room-message-input button {
+    padding: 8px;
+}
+
+/* Extra customizations. */
+
+.room-connected-users::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 16px;
+}
+
+.room-connected-users::-webkit-scrollbar-track {
+    background-color: #FAFAFA;
+    border-radius: 16px;
+}
+
+.room-connected-users::-webkit-scrollbar-thumb {
+    background: #8E8E8E;
+    border-radius: 16px;
+}

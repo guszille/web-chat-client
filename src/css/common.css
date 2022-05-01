@@ -1,0 +1,38 @@
+.popover {
+    position: fixed;
+    bottom: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 12px 24px;
+    border-radius: 4px;
+    background-color: var(--discord-color-chat);
+    transition: all 0.3s ease-in-out;
+}
+
+.popover[shown='true'] {
+    bottom: 32px;
+}
+
+.popover p {
+    color: var(--discord-color-white);
+    font-size: 14px;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-right: 32px;
+}
+
+.popover button {
+    color: var(--discord-color-white);
+    font-size: 16px;
+    background-color: transparent;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+}
+
+.popover button:hover {
+    opacity: 0.65;
+}

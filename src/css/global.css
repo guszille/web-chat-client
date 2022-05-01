@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.ttf');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.ttf');
+    font-style: normal;
+    font-weight: 700;
+}
+
+:root {
+    --discord-color-core: #7289DA;
+    --discord-color-online: #43B581;
+    --discord-color-dnd: #F04747;
+    --discord-color-idle: #FAA61A;
+    --discord-color-nitro: #FF73FA;
+    --discord-color-bravery: #9B84EE;
+    --discord-color-balance: #44DDBF;
+    --discord-color-brilliance: #F47B68;
+    --discord-color-high: #F57731;
+    --discord-color-skin: #F9C9A9;
+    --discord-color-white: #FFFFFF;
+    --discord-color-grey: #99AAB5;
+    --discord-color-chat: #36393F;
+    --discord-color-channels: #2F3136;
+    --discord-color-servers: #202225;
+    --discord-color-button: #5865F2;
+    --discord-color-link: #00AFF4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--discord-color-core);
+}
