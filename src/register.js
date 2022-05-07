@@ -1,11 +1,6 @@
 // React.
 import React from 'react'
 
-// Other JS Libs.
-import {
-    Link
-} from 'react-router-dom'
-
 // Etc.
 import * as common from './common'
 
@@ -20,7 +15,6 @@ const initialState = {
     popoverMessage: '',
     showPopover: false,
 
-    error: '',
     busy: false
 }
 
@@ -31,7 +25,7 @@ export const Register = (props) => {
         setState({ ...state, [key]: value })
     }
 
-    const handleOnClick = async () => {
+    const handleOnClick = async (event) => {
         if (state.email && state.name && state.password) {
             const args = {}
 
@@ -56,14 +50,14 @@ export const Register = (props) => {
                 })
 
             } else {
-                // FIXME: Show an error message on screen.
+                // FIXME: Show the error message on screen.
 
                 setState({ ...state, busy: false })
             }
         }
     }
 
-    return (
+    return ( <>
         <div className={ classes['app-centered-page'] }>
             <div className={ classes['register'] }>
                 <h1>Create your account!</h1>
@@ -77,11 +71,13 @@ export const Register = (props) => {
                 <label>PASSWORD</label>
                 <input type='password' value={ state.password } onChange={ (event) => hendleOnChange('password', event.target.value) } />
 
-                <button disabled={ state.busy } type='button' onClick={ () => handleOnClick() }>Register</button>
-                <p>Already have an account? {' '} <Link to='/login'>Login</Link></p>
+                <button type='button' onClick={ handleOnClick }>Register</button>
+                <p>Already have an account? {' '} <common.Link to='/login'>Login</common.Link></p>
             </div>
 
             <common.Popover shown={ state.showPopover } message={ state.popoverMessage } onClose={ () => { setState({ ...state, showPopover: false }) } } />
         </div>
-    )
+
+        <common.LoadingOverlay active={ state.busy } />
+    </> )
 }

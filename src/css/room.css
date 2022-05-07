@@ -1,52 +1,49 @@
+.app-centered-page {
+    width: 1280px;
+    min-height: calc(100vh - 32px);
+    margin: 16px auto;
+    box-sizing: border-box;
+}
+
 .room {
-    background-color: #AEAEAE;
+    border-radius: 4px;
+    background-color: var(--discord-color-chat);
+
+    min-height: inherit;
+    display: flex;
+}
+
+.room > div:first-child {
+    width: 300px;
+    border-radius: 4px;
+    background-color: var(--discord-color-channels);
 
     padding: 16px;
-
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 80px;
-    grid-column-gap: 8px;
-    grid-row-gap: 8px;
 }
 
-.room-connected-users {
-    background-color: #EAEAEA;
-
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-
+.room > div:last-child {
+    flex: 1;
     padding: 16px;
 
-    border: 1px solid transparent;
-    border-radius: 8px;
-
-    display: grid;
-    grid-row-gap: 8px;
-    grid-auto-rows: 48px;
-
-    overflow: auto;
-    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
 }
 
-.room-connected-users div {
-    background-color: #FFFFFF;
+.room .connected-users div {
+    background-color: var(--discord-color-chat);
 
-    padding: 8px 32px;
-
+    padding: 12px 32px;
+    border-radius: 4px;
     border: 1px solid transparent;
-    border-radius: 16px;
 }
 
-.room-connected-users span {
-    background-color: #CCCCCC;
+.room .connected-users span {
+    background-color: var(--discord-color-grey);
 
     padding: 5px;
 
     border: 1px solid transparent;
-    border-radius: 64px;
+    border-radius: 50%;
 
     /* WARN: sledgehammer in the code. */
     width: 20px;
@@ -55,65 +52,59 @@
     display: inline-block;
 }
 
-.room-connected-users p {
+.room .connected-users p {
     margin: 0;
-
+    font-size: 16px;
     display: inline-block;
+    color: var(--discord-color-white);
 }
 
-.room-message-list {
-    background-color: #EAEAEA;
-
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-
+.room .messages {
+    flex: 1;
     padding: 16px;
-
-    border: 1px solid transparent;
-    border-radius: 8px;
 }
 
-.room-message-input {
-    background-color: #EAEAEA;
-
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-
-    padding: 16px;
-
-    border: 1px solid transparent;
-    border-radius: 8px;
-
+.room .message-area {
     display: flex;
 }
 
-.room-message-input textarea {
+.room .message-area textarea {
     flex: 1;
-    padding: 8px;
-    margin-right: 8px;
+    padding: 12px 8px;
+    margin-right: 16px;
+
+    outline: 0;
+    background-color: var(--discord-color-servers);
+    color: var(--discord-color-white);
+    font-size: 14px;
+
+    border-width: 0px;
+    border-radius: 4px;
 }
 
-.room-message-input button {
-    padding: 8px;
+.room .message-area button {
+    padding: 16px;
+    background-color: var(--discord-color-button);
+    color: var(--discord-color-white);
+    transition: all 0.25s linear;
+    cursor: pointer;
+    font-size: 16px;
+
+    border-radius: 4px;
+    border-width: 0px;
 }
 
-/* Extra customizations. */
-
-.room-connected-users::-webkit-scrollbar {
-    width: 8px;
-    border-radius: 16px;
+.room .message-area button:hover {
+    opacity: 0.65;
 }
 
-.room-connected-users::-webkit-scrollbar-track {
-    background-color: #FAFAFA;
-    border-radius: 16px;
+.room h2 {
+    color: var(--discord-color-white);
 }
 
-.room-connected-users::-webkit-scrollbar-thumb {
-    background: #8E8E8E;
-    border-radius: 16px;
+.room hr {
+    border: 0;
+    height: 2px;
+    margin: 16px -16px;
+    background-color: var(--discord-color-chat);
 }

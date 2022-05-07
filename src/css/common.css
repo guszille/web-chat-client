@@ -36,3 +36,38 @@
 .popover button:hover {
     opacity: 0.65;
 }
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    opacity: 0.65;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-overlay[active='true'] {
+    display: flex;
+}
+
+.loading-overlay div {
+    width: 64px;
+    height: 64px;
+
+    border: 8px solid var(--discord-color-grey);
+    border-top: 8px solid var(--discord-color-core);
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
